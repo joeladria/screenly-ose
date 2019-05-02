@@ -103,6 +103,8 @@ def template(template_name, **context):
 
     # Add global contexts
     context['up_to_date'] = is_up_to_date()
+    context['video_rotation'] = settings['video_rotation']
+    context['loop_videos'] = settings['loop_videos']
     context['default_duration'] = settings['default_duration']
     context['default_streaming_duration'] = settings['default_streaming_duration']
     context['use_24_hour_clock'] = settings['use_24_hour_clock']
