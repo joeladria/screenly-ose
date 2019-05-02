@@ -478,17 +478,7 @@ def wait_for_node_ip(seconds):
 def main():
     setup()
 
-    wireless_connections = nmcli_get_connections('wlan*', 'ScreenlyOSE-*', active=True)
-
-    if not wireless_connections and not path.isfile(HOME + INITIALIZED_FILE) and not gateways().get('default'):
-        url = 'http://{0}/hotspot'.format(LISTEN)
-        load_browser(url=url)
-
-        while not wireless_connections and not path.isfile(HOME + INITIALIZED_FILE) and not gateways().get('default'):
-            sleep(1)
-            wireless_connections = nmcli_get_connections('wlan*', 'ScreenlyOSE-*', active=True)
-
-    wait_for_node_ip(5)
+ 
 
     url = 'http://{0}:{1}/splash_page'.format(LISTEN, PORT) if settings['show_splash'] else 'file://' + BLACK_PAGE
     browser_url(url=url)
