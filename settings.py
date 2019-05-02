@@ -30,6 +30,8 @@ DEFAULTS = {
         'show_splash': True,
         'audio_output': 'hdmi',
         'shuffle_playlist': False,
+        'video_rotation' : '0',
+        'loop_videos' : True,
         'resolution': '1920x1080',
         'default_duration': '10',
         'default_streaming_duration': '300',
