@@ -329,6 +329,10 @@ def view_video(uri, duration):
 
     if duration and duration != 'N/A':
         player_args = ['timeout', VIDEO_TIMEOUT + int(duration.split('.')[0])] + player_args
+    if settings['video_rotation']:
+        player_args = ['orientation': settings['video_rotation']] + player_args
+    if settings['loop_videos']:
+        player_args = ['loop'] + player_args
 
     run = sh.Command(player_args[0])(*player_args[1:], **player_kwargs)
 
