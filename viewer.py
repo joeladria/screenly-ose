@@ -323,7 +323,7 @@ def view_video(uri, duration):
     if arch in ('armv6l', 'armv7l'):
         player_args = ['omxplayer', uri]
         if settings['video_rotation']:
-            player_args = player_args + ['--orientation','90']
+            player_args = player_args + ['--orientation',settings['video_rotation']]
         if settings['loop_videos']:
             player_args = player_args + ['--loop'] 
 
