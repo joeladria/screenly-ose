@@ -322,18 +322,22 @@ def view_video(uri, duration):
 
     if arch in ('armv6l', 'armv7l'):
         player_args = ['omxplayer', uri]
+        if settings['video_rotation']:
+            player_args = player_args + ['--orientation','90']
+        if settings['loop_videos']:
+            player_args = player_args + ['--loop'] 
+
+
         player_kwargs = {'o': settings['audio_output'], '_bg': True, '_ok_code': [0, 124, 143]}
     else:
         player_args = ['mplayer', uri, '-nosound']
         player_kwargs = {'_bg': True, '_ok_code': [0, 124]}
 
-    if duration and duration != 'N/A':
-        player_args = ['timeout', VIDEO_TIMEOUT + int(duration.split('.')[0])] + player_args
-    if settings['video_rotation']:
-        player_args = ['orientation': settings['video_rotation']] + player_args
-    if settings['loop_videos']:
-        player_args = ['loop'] + player_args
+#    if duration and duration != 'N/A':
+#        player_args = ['timeout', VIDEO_TIMEOUT + int(duration.split('.')[0])] + player_args
 
+
+    logging.warning(player_args)
     run = sh.Command(player_args[0])(*player_args[1:], **player_kwargs)
 
     browser_clear(force=True)
