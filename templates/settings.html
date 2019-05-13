@@ -166,9 +166,9 @@
                         <select class="form-control" name="video_rotation">
                            
                                 <option value="0"{% if context.video_rotation == '0' %} selected="selected"{% endif %}>0</option>
-                                <option value="90"{% if context.video_rotation == '90' %} selected="selected"{% endif %}>>90</option>
-                                <option value="180"{% if context.video_rotation == '180' %} selected="selected"{% endif %}>>180</option>
-                                <option value="270"{% if context.video_rotation == '270' %} selected="selected"{% endif %}>>270</option>
+                                <option value="90"{% if context.video_rotation == '90' %} selected="selected"{% endif %}>90</option>
+                                <option value="180"{% if context.video_rotation == '180' %} selected="selected"{% endif %}>180</option>
+                                <option value="270"{% if context.video_rotation == '270' %} selected="selected"{% endif %}>270</option>
                                                      
                         </select>
                     </div>
@@ -192,7 +192,7 @@
                 </div>
 
                     <div class="form-group row">
-                    <label class="col-2 col-form-label">Loop Videos</label>
+                    <label class="col-2 col-form-label">Loop Videos Forever</label>
                     <div class="col-3">
                         <label id="loop_videos" class="checkbox toggle card card-body bg-light">
                             {% if context.loop_videos %}
