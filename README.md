@@ -1,3 +1,16 @@
+### Loop & Orientation Fork
+
+This adds two functions to Screenly OSE:
+1. allowing for rotation (omxplayer --orientation)
+1. Looping features of omxplayer 
+
+They are exposed in the "Settings" menu. The looping function does break scheduling, as the "timeout" built-in viewer.py has to be removed to allow for clean video looping. You can still use the "next/previous media" functions to force a change in content. 
+
+Unfortunately these are global settings at this time and not by media. Ideal for a simple player that needs to play a single video on loop.
+
+----
+
+
 [![Build Status](https://travis-ci.org/Screenly/screenly-ose.svg?branch=master)](https://travis-ci.org/Screenly/screenly-ose)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/5905ebcf4aab4220ad9fdf3fb679c49d)](https://www.codacy.com/app/vpetersson/screenly-ose?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Screenly/screenly-ose&amp;utm_campaign=Badge_Grade)
 
